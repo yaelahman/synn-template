@@ -1,0 +1,44 @@
+body {
+    background-color: #1D222F;
+    font-family: 'Poppins';
+}
+
+.logo-synn {
+    /* position: absolute; */
+    width: 106px;
+    height: 106px;
+    /* left: 47px;
+    top: -15px; */
+}
+
+.card-jumbotron {
+    background: rgba(20, 99, 243, 0.73);
+    border-radius: 50px;
+}
+
+.description-synn {
+    line-height: 38px;
+    display: flex;
+    align-items: flex-end;
+    color: #F5F5F5;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-synn {
+    background: #25294F;
+    box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    color: rgba(250, 250, 250, 0.4);
+}
+
+.form-synn:focus {
+    background: #25294F;
+    box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    color: rgba(250, 250, 250, 0.4);
+}
+
+.card-recharge {
+    background: #25294F;
+    border-radius: 15px;
+}
