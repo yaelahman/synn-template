@@ -5,8 +5,8 @@ body {
 
 .logo-synn {
     /* position: absolute; */
-    width: 106px;
-    height: 106px;
+    /* width: 106px;
+    height: 106px; */
     /* left: 47px;
     top: -15px; */
 }
@@ -43,15 +43,77 @@ body {
 
 .card-recharge {
     background: #25294F;
+    /* background: transparent; */
     border-radius: 15px;
     transition: transform 0.2s;
+    border: 0;
     cursor: pointer;
+    position: relative;
 }
 
 .card-recharge:hover {
     transform: scale(1.02); 
     border: 1px solid rgba(20, 99, 243, 0.73);
 }
+
+.desc-footer {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footer-title-2 {
+    position: relative;
+    white-space: no-wrap;
+}
+.footer-title-2:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #84A4FC;
+    margin-top: 4px;
+}
+
+.clicked-pricelist {
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 0px 10px 1px #1463F3;
+}
+
+.clicked-pricelist:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #1463F3;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 15px;
+    clip-path: polygon(80% 0, 100% 35%, 100% 100%, 0 100%, 0 0);
+}
+.clicked-pricelist:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #84A4FC;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    border-radius: 15px;
+}
+
+.checklist {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+}
+
+/* .clicked-pricelist:hover {
+    transform: scale(1.02); 
+    border: 1px solid rgba(20, 99, 243, 0.73);
+} */
 
 @media (max-width: 576px) { 
     .description-synn {
@@ -68,5 +130,10 @@ body {
 
     .mlbb-jumbotron {
         text-align:center;
+    }
+
+    .checklist {
+        right: 5px;
+        top: 10px;
     }
 }
