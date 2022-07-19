@@ -55,6 +55,20 @@ body {
     transform: scale(1.02); 
     border: 1px solid rgba(20, 99, 243, 0.73);
 }
+.card-payment {
+    background: #25294F;
+    /* background: transparent; */
+    border-radius: 15px;
+    transition: transform 0.2s;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-payment:hover {
+    transform: scale(1.02); 
+    border: 1px solid rgba(20, 99, 243, 0.73);
+}
 
 .desc-footer {
     font-weight: 600;
@@ -110,6 +124,16 @@ body {
     top: 8px;
 }
 
+.checklist-payment {
+    position: absolute;
+    right: 4px;
+    top: 5px;
+}
+
+.fade {
+    transition: opacity 0.25s linear !important;
+}
+
 /* .clicked-pricelist:hover {
     transform: scale(1.02); 
     border: 1px solid rgba(20, 99, 243, 0.73);
@@ -117,7 +141,7 @@ body {
 
 @media (max-width: 576px) { 
     .description-synn {
-        line-height: 28px;
+        line-height: 18px;
         font-size: 0.8em;
         text-align: center;
     }
@@ -130,6 +154,7 @@ body {
 
     .mlbb-jumbotron {
         text-align:center;
+        /* margin-bottom: 0; */
     }
 
     .checklist {

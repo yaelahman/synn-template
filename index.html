@@ -9,13 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
-<body>
+<body onload="zoom()">
 
 
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+        <div class="container py-3">
             <img src="./images/logo.png" alt="" class="logo-synn me-2">
             <a class="navbar-brand" href="#">
                 SYNN STORE
@@ -42,7 +43,7 @@
             <div class="card card-jumbotron text-white">
                 <div class="card-body px-5 py-0">
                     <div class="row">
-                        <div class="col-md-6 py-5">
+                        <div class="col-md-6 py-md-5 py-3">
                             <h3 class="description-synn">
                                 We are Malaysian Mobile Legends Diamond Provider who are providing diamonds at a
                                 real-time
@@ -76,12 +77,15 @@
                 </label>
                 <div class="row row-cols-2 px-3">
                     <div class="col-8">
-                        <input type="text" class="form-control form-synn border-0 px-4 py-2"
-                            placeholder="Enter User ID">
+                        <input type="text" name="user_id"
+                            class="form-control input-account form-synn border-0 px-4 py-2" placeholder="Enter User ID">
                     </div>
                     <div class="col-4">
-                        <input type="text" class="form-control form-synn border-0 px-4 py-2" placeholder="Zone ID">
+                        <input type="text" name="zone_id"
+                            class="form-control input-account form-synn border-0 px-4 py-2" placeholder="Zone ID">
                     </div>
+                </div>
+                <div class="text-start account-checked p-3">
                 </div>
             </div>
             <div class="form-group mb-3">
@@ -90,7 +94,7 @@
                 </label>
                 <div class="row row-cols-md-3 row-cols-2 p-3">
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
 
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
@@ -111,7 +115,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -131,7 +135,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -151,7 +155,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -171,7 +175,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -191,7 +195,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -211,7 +215,7 @@
                         </div>
                     </div>
                     <div class="col mb-4">
-                        <div class="card card-recharge h-100">
+                        <div class="card card-recharge h-100" data-type="86">
                             <div class="card-body" style="min-height: 105px;">
                                 <div class="row row-cols-md-2 row-cols-1 p-3">
                                     <div class="col">
@@ -231,6 +235,10 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="text-end">
+                    <button class="btn btn-primary px-4 py-2 me-3 btn-next">Next <i
+                            class="ms-2 fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -254,7 +262,7 @@
         <div class="container">
             <div class="row py-5">
                 <div class="col-md-6 d-flex mb-3">
-                    <img src="./images/logo.png" height="80px" alt="">
+                    <img src="./images/logo.png" class="my-auto" height="80px" alt="">
                     <h6 class="my-auto px-3 desc-footer">Synn Store is a trusted seller
                         who has been providing a product
                         and services in Mobile Legends
@@ -291,6 +299,21 @@
                 </div>
             </div>
         </div>
+
+        <!-- TOAST -->
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="alertToast" class="toast align-items-center border-0" role="alert" aria-live="assertive"
+                data-bs-animation="true" data-bs-autohide="true" data-bs-delay="2000" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
         <div style="background-color: #030A17;">
             <div class="conatiner py-4">
                 <h6 class="text-center my-auto">Copyright © 2022 Synn Store. All Rights Reserved</h6>
@@ -298,15 +321,127 @@
         </div>
     </footer>
 
+
+    <button class="btn btn-primary btn-offcanvas d-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></button>
+
+    <!-- OFFCANVAS -->
+    <div class="offcanvas offcanvas-end" style="background-color: #1D222F;" data-bs-scroll="true"
+        data-bs-backdrop="static" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header text-white">
+            <h5 class="offcanvas-title mx-auto" id="offcanvasScrollingLabel">4. Select Payment</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row row-cols-2 px-3">
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/FPX.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/TouchNGo.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/ShopeePay.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/BootsApp.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/Visa.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card h-100 card-payment" style="background-color: #25294F;">
+                        <div class="card-body text-center">
+                            <img src="./images/payment/GrabPay.png" width="70px" height="70px" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer p-3 text-white">
+            <div class="text-end mb-4">
+                <h6 class="mb-0">Base Price: RM12.01</h6>
+                <h6 class="mb-0">Markup Fees: RM5.00</h6>
+                <h6 class="mb-0">Gateway Fees: RM1.99</h6>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary rounded-pill px-3 py-2 mb-3 btn-select-payment"
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Buy (RM
+                    12.01)&nbsp;<i class="ms-2 fas fa-arrow-right"></i></button>
+                <br>
+                <button type="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                    class="btn btn-danger rounded-pill px-3 py-2 mb-3"><i class="fas fa-arrow-left"></i>&nbsp;
+                    Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "80%"
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <script src="./helper.js"></script>
     <!-- clicked-pricelist -->
     <script type="text/javascript">
+
+
+        let type = null
+        let user_id = null
+        let zone_id = null
+        let exist_account = false
+        let userData = []
+
         $('.card-recharge').on('click', function () {
             let card = $(this)
+            type = card.attr('data-type')
+
             $('.card-recharge')
                 .css('background', '#25294F')
                 .removeClass('clicked-pricelist')
@@ -323,6 +458,69 @@
                         fill="#F5F5F5" />
                 </svg>
             `)
+        })
+
+        $('.card-payment').on('click', function () {
+            let card = $(this)
+            type = card.attr('data-type')
+
+            $('.card-payment')
+                .css('background', '#25294F')
+                .removeClass('clicked-pricelist')
+
+            $('.card-payment .checklist-payment').remove()
+
+            card.css('background', 'transparent')
+            card.addClass('clicked-pricelist')
+            card.append(`
+                <svg class="checklist-payment" width="18" height="12" viewBox="0 0 18 12" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.0405 0.626221C17.431 1.01675 17.431 1.64991 17.0405 2.04044L7.70719 11.3738C7.31666 11.7643 6.6835 11.7643 6.29297 11.3738L0.959641 6.04044C0.569117 5.64991 0.569117 5.01675 0.959641 4.62622C1.35017 4.2357 1.98333 4.2357 2.37385 4.62622L7.00008 9.25245L15.6263 0.626221C16.0168 0.235697 16.65 0.235697 17.0405 0.626221Z"
+                        fill="#F5F5F5" />
+                </svg>
+            `)
+        })
+
+        $('.input-account').on('blur', function () {
+            userData = []
+
+            // $('.account-checked').html(`<h6>Loading...</h6>`)
+            $('.input-account').map(function () {
+                userData.push({
+                    name: $(this)[0].name,
+                    value: $(this).val()
+                });
+            })
+
+            // setTimeout(() => {
+            //     if (!exist_account) {
+            //         $('.account-checked').html(`<h6>Account Not Found</h6>`)
+            //     }
+            // }, 3000);
+        })
+
+        $('.btn-next').on('click', function () {
+            user_id = $('input[name=user_id]').val()
+            zone_id = $('input[name=zone_id]').val()
+            $('.btn-offcanvas').trigger('click')
+            $('.offcanvas-backdrop').css('height', '100%')
+
+            if (type == null || user_id.length == 0 || zone_id.length == 0) {
+                $('.toast-body').html('Please fill all forms !')
+                $('#alertToast')
+                    .addClass('text-bg-danger')
+                    .toast('show')
+            } else {
+                $('.btn-offcanvas').trigger('click')
+                $('.offcanvas-backdrop').css('height', '100%')
+            }
+        })
+
+        $('.btn-select-payment').on('click', function () {
+            $('.modal-backdrop')
+                .css('width', '100%')
+                .css('height', '100%')
         })
     </script>
 </body>
